@@ -12,7 +12,7 @@ def solution(p: float, x: np.array) -> tuple:
     # Не меняйте название функции и её аргументы
     loc = x.mean()
     b = 2 * loc - 0.083
-    
+    alpha = 1 - p
     scale = np.sqrt(((b - 0.083)**2) / 12) / np.sqrt(len(x))
     return b - scale * uniform.ppf(1 - alpha / 2), \
            b - scale * uniform.ppf(alpha / 2)
